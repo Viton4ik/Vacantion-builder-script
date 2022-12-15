@@ -5,7 +5,6 @@ import xlsxwriter
 from datetime import datetime
 from dateutil.rrule import rrule, DAILY
 import calendar
-#import holidays
 import holidays.countries
 
 
@@ -64,7 +63,7 @@ while row != 26:
     # next line
     row += 1
 # print(user_vacation)
-# print(vacation)
+# print(vacation['Шматович Дмитрий'])
 
 # 2 schedule builder
 week_days = { 1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu', 5: 'Fri', 6: 'Sat', 7: 'Sun' }
@@ -75,23 +74,8 @@ previous_year = 2022
 listOfHolidays = []
 listOfHolidays_date = []
 for ptr in holidays.RS(years=year).items(): # https://pythonpip.ru/osnovy/modul-holidays-python
-    # print(ptr)
-    # print(ptr[0])
     listOfHolidays.append((ptr[0], ptr[1]))
     listOfHolidays_date.append(ptr[0])
-# print(listOfHolidays[0][1])
-# print(listOfHolidays_date)
-
-# if datetime(2023, 1, 1).date() in listOfHolidays_date:
-#     print('dddqegwrgrg')
-
-# for i in listOfHolidays:
-    # print(i[0])
-    # print(datetime(2023, 1, 1).date())
-    # if datetime(2023, 1, 1).date() == i[0]:
-    #     print('dddd')
-
-
 
 # initializing the start and end date
 start_date = datetime(year,1,1)
@@ -103,6 +87,7 @@ default_col = 3
 # create a file
 file_name = xlsxwriter.Workbook(f"{year} schedule.xlsx")
 worksheet = file_name.add_worksheet(f"{year} schedule")
+
 
 # features for the cells
 
@@ -176,7 +161,7 @@ for d in rrule(DAILY, dtstart=start_date, until=end_date):
                 if week_days[(day.weekday() + 1)] == 'Sat' or week_days[(day.weekday() + 1)] == 'Sun':
                     dayoff_number += 1
                 # add official holidays
-                if day.date() in listOfHolidays_date:
+                if day.date() in listOfHolidays_date and week_days[(day.weekday() + 1)] != 'Sat' and week_days[(day.weekday() + 1)] != 'Sun':
                     dayoff_number += 1
 
             # create a schedule
@@ -245,50 +230,3 @@ worksheet.write(default_row + len(vacation.keys())+3, default_col-1, "Created by
 worksheet.protect(options={'autofilter': True})
 
 file_name.close()
-
-
-
-
-
-
-
-
-# print(datetime(2023,12,31))
-# print(calendar.monthrange(2023, 2)[1])
-
-# # iterating over the dates
-# for d in rrule(DAILY, dtstart=start_date, until=end_date):
-#     print(d.strftime("%Y-%m-%d"))
-
-
-# time = (datetime(2023,12,31) - datetime(2023,1,1)).days
-
-
-# for month in range(1,13):
-#     print(datetime(2023,12,31).weekday())
-
-
-#     worksheet.write(default_row + 1, default_col, day)
-# # print(datetime(day=vacation_day, month=vacation_month, year=year))
-# print(datetime(2023,1,1))
-# print(datetime(2023,12,31))
-# print(datetime(2023,12,31).day)
-# print(datetime(2023,12,31).weekday())
-# print((datetime(2023,12,31) - datetime(2023,1,1)).days)
-# print(timedelta(7).days)
-
-
-# print(int(f'{datetime.today():%j}'))
-
-
-# import holidays
-# import holidays.countries
-#
-# listOfHolidays = []
-# for ptr in holidays.RS(years=year).items():
-#     print(ptr)
-#     # print(ptr[0])
-#     # print(ptr[1])
-#     # listOfHolidays.append((ptr[0], ptr[1]))
-#
-# # print(listOfHolidays)
