@@ -1,6 +1,9 @@
-# Vacantion-builder-script
+<h1 align="center">Vacantion-builder-script</a> 
+<img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
+<h3 align="center">
+<a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a>
 
-Task
+<p><img src="https://img.shields.io/badge/📝Task:-purple"/></p>
 
 The Customer has his own vacation plan created in an xlsx-file. 
 This file is being used to take some data about vacation quantity, dates, and durations.
