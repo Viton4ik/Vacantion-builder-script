@@ -3,7 +3,7 @@
 <h3 align="center">
 <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a>
 
-<p><img src="https://img.shields.io/badge/📝Task:-purple"/></p>
+<p><img src="https://img.shields.io/badge/📝Idea:-purple"/></p>
 
 The vacation paln is located in a separate xlsx-file. 
 This file is being used to take some data about vacation quantity, dates, and durations.
