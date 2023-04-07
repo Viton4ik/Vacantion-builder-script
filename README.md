@@ -5,7 +5,7 @@
 
 <p><img src="https://img.shields.io/badge/📝Task:-purple"/></p>
 
-The Customer has his own vacation plan created in an xlsx-file. 
+The vacation paln is located in a separate xlsx-file. 
 This file is being used to take some data about vacation quantity, dates, and durations.
 Using these data, the script will create a new xlsx-file that has a detailed plan for each employee.
 Also, each holiday (Serbian holidays calendar has been used here) is being taken into account before we use it there. 
